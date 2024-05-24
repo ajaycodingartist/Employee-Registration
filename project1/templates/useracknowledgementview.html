@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Job List
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<!-- <script src="https://js.stripe.com/v3/"></script> -->
+
+<br><br><br><br><br>
+<div class="container">
+  <h1 align="center" style="color: rgb(15, 15, 15); font-family: Verdana, Geneva, Tahoma, sans-serif;">Acknowledgement from Worker</h1>
+  <br>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Worker Name</th>
+            <th scope="col">Phone</th>
+            <th scope="col">Acknowledgement</th>
+            <th scope="col">Payment</th>
+            <th scope="col">Payment</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for i in acknowledgements %}
+          <tr>
+            <td>{{i.workername}}</td>
+            <td>{{i.wphone}}</td>
+            <td>{{i.ackmesg}}</td>
+            <td>
+              <!-- <button type="button" class="btn btn-primary" style="width: 110px; font-weight: bold;">Pay</button> -->
+              <form action="{% url 'paymentsuccess' %}" method="post">
+                {% csrf_token %}
+                <script src="https://checkout.stripe.com/checkout.js " class="stripe-button"
+                data-key="{{ key }}"
+                data-description="Payment Gateway"
+                data-amount="500"
+                data-locals="auto">
+              </script>
+            </form>   
+            <!--  1st option payment-->
+            </td>
+            <td><a href="{% url 'paying' %}">Pay</a></td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+      <br><br><br><br><br>
+</div>
+
+{% endblock %}

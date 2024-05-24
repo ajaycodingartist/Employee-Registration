@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Job Request
+{% endblock %}
+
+{% block content %}
+<script>
+  function popup()
+  {
+    alert("Registered successfully")
+  }
+</script>
+{% load static %} 
+
+<br><br>
+<div class="container" align="center">
+    <h1 style="color: rgb(10, 10, 10); font-family: Verdana, Geneva, Tahoma, sans-serif;">Job Request</h1>
+    <br>
+    <div class="col-lg-5 align-self-center">
+        <form id="contact" action="occupationreq/{{res.id}}" enctype="multipart/form-data" method="POST" style="border-radius: 7px; height: 580px; box-shadow: 5px 10px 8px #888888; background-color: rgb(109, 191, 220);">
+            {% csrf_token %}
+          <br><br>
+          <div class="row">
+            <div class="col-lg-12">
+                <fieldset>
+                  <input type="type" name="username" class="form-control" id="username" autocomplete="on" value="{{result.username}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;">
+                  <hr style="margin-top: -1px; color: black; width: 350px;">
+                </fieldset>
+            </div>
+          <br>
+          <br>
+          <div class="col-lg-12">
+            <fieldset>
+              <input type="type" name="id" class="form-control" id="id" autocomplete="on" value="{{res.workername}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;">
+              <hr style="margin-top: -1px; color: black; width: 350px;">
+            </fieldset>
+        </div>
+        <br>
+        <br>
+            <div class="col-lg-12">
+                <textarea name="job_description" id="job_description" cols="30" rows="10" placeholder="Type your Concern" style="border-radius: 5px;"></textarea>
+            </div>
+            <br>
+            <br>
+            <div class="col-lg-12">
+                <fieldset>
+                  <input type="type" name="job_location" class="form-control" id="job_location" placeholder="Location" autocomplete="on" value="{{result.job_location}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;">
+                  <hr style="margin-top: -1px; color: black; width: 350px;">
+                </fieldset>
+            </div>
+            <br>
+            <br>
+            <div class="col-lg-12">
+                <fieldset>
+                  <input type="date" name="job_date" class="form-control" id="job_date" placeholder="Date" autocomplete="on" required pattern="" style="height: 30px; width: 250px; border: transparent; background-color: transparent;">
+                  <hr style="margin-top: -1px; color: black; width: 350px;">
+                </fieldset>
+            </div>
+            <br>
+            <br>
+            
+            <div class="col-lg-12">
+              <fieldset style="margin-top: 10px;">
+                <button type="submit" onclick="popup()" class="form-control me-2" id="form-submit" class="main-button" style="height: 40px; width: 350px; border-radius: 3px; background-color: rgb(59, 109, 183); font-weight: bold; border-color: black;">Register Complaint</button>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div> 
+</div>
+
+<br><br><br><br>
+
+{% endblock %}

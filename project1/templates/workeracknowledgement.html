@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Worker Reply
+{% endblock %}
+
+{% block content %}
+<script>
+  function popup()
+  {
+    alert("Registered successfully")
+  }
+</script>
+{% load static %} 
+
+<br><br>
+<div class="container" align="center">
+    <h1 style="color: rgb(10, 10, 10); font-family: Verdana, Geneva, Tahoma, sans-serif;">Worker Acknowledgement</h1>
+    <br>
+    <div class="col-lg-5 align-self-center">
+        <form id="contact" action="workeracknowledgementsave/{{res.id}}" enctype="multipart/form-data" method="POST" style="border-radius: 7px; height: 580px; box-shadow: 5px 10px 8px #575252; background-color: rgb(121, 181, 216);">
+            {% csrf_token %}
+          <br><br>
+          <div class="row">
+            <div class="col-lg-12">
+              <fieldset>
+                <label for="" style="font-weight: bold;">User Name</label>
+                <input type="type" name="replyto" class="form-control" id="replyto" autocomplete="on" value="{{res.username}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;" disabled>
+                <hr style="margin-top: -1px; color: black; width: 350px;">
+              </fieldset>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-lg-12">
+              <fieldset>
+                <label for="" style="font-weight: bold;">Your Name</label>
+                <input type="type" name="replyfrom" class="form-control" id="replyfrom" autocomplete="on" value="{{result.workername}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;" disabled>
+                <hr style="margin-top: -1px; color: black; width: 350px;">
+              </fieldset>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-lg-12">
+                <fieldset>
+                  <label for="" style="font-weight: bold;">Your Phone</label>
+                  <input type="type" name="wphone" class="form-control" id="wphone" autocomplete="on" value="{{result.phone}}" style="height: 30px; width: 250px; border: transparent; background-color: transparent;">
+                  <hr style="margin-top: -1px; color: black; width: 350px;">
+                </fieldset>
+              </div>
+              <br>
+              <br>
+              <br>
+            <div class="col-lg-12">
+                <textarea name="ackmesg" id="ackmesg" cols="30" rows="10" placeholder="Acknowledgement" style="border-radius: 5px; background: transparent; border-color: rgb(101, 98, 98);"></textarea>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-lg-12">
+              <fieldset style="margin-top: 10px;">
+                <button type="submit" onclick="popup()" class="form-control me-2" id="form-submit" class="main-button" style="height: 40px; width: 350px; border-radius: 3px; background-color: rgb(59, 109, 183); font-weight: bold; border:none">Send</button>
+              </fieldset>
+            </div>
+          </div>
+        </form>
+      </div> 
+</div>
+
+<br><br><br><br>
+
+{% endblock %}

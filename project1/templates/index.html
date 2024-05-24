@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Home 
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="section main-banner" id="top" data-section="section1">
+    <div>
+      <img src="{% static 'images\home_bg_image.jpg' %}" alt="" style="width: 100%; height: 850px; margin-top: -60px;">
+    </div>
+      <div class="header-text" style="margin-top: -450px;" align="center">
+          <div class="caption" style="margin-left: -920px;">
+              <h1 style="font-weight: bold; color: rgb(75, 74, 74); font-size: 40px; text-shadow: 2px 5px 4px #000000;">EMPLOYEE FINDER</h1>
+          </div>
+      </div>
+  </section>
+  <section style="margin-top: 470px;">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <div class="card" style="width: 18rem; background-color: rgb(223, 227, 233); box-shadow: 10px 10px 10px rgb(61, 61, 61);">
+            <img src="{% static 'images\carpenter.jpg' %}" class="card-img-top" style="height: 180px;" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <div class="card" style="width: 18rem; background-color: rgb(223, 227, 233); box-shadow: 10px 10px 10px rgb(61, 61, 61);">
+            <img src="{% static 'images\electrician.jpg' %}" class="card-img-top" style="height: 180px;" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <div class="card" style="width: 18rem; background-color: rgb(223, 227, 233); box-shadow: 10px 10px 10px rgb(61, 61, 61);">
+            <img src="{% static 'images\mechanic.jpg' %}" class="card-img-top" style="height: 180px;" alt="...">
+          </div>
+        </div>
+        <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-xl-3">
+          <div class="card" style="width: 18rem; background-color: rgb(223, 227, 233); box-shadow: 10px 10px 10px rgb(61, 61, 61);">
+            <img src="{% static 'images\painter.jpg' %}" class="card-img-top" style="height: 180px;" alt="...">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <h1 align="center" style="text-shadow: 2px 2px 4px #000000;">About Us</h1>
+          <p align="center" >Welcome to FIND MY WORKER, the premier platform for hassle-free employee registration and daily wage services. Our mission is to revolutionize the way people manage their daily-wage workforce, providing an efficient and user-friendly solution for employee onboarding and record-keeping.
+    
+            <h4>Key Features</h4>
+            <ul>
+
+              <li>Quick Registration:</li> Our platform facilitates swift and straightforward registration for daily-wage workers, minimizing administrative overhead and optimizing the onboarding process.
+            
+              <li>Dynamic Scheduling:</li> Easily manage daily-wage worker schedules, ensuring optimal workforce utilization while maintaining flexibility for both employers and employees.
+            
+              <li>Compliance Assistance:</li> Stay compliant with labor laws and regulations effortlessly. Our platform helps you navigate legal requirements related to daily-wage employment.
+
+              <li>Tailored for Daily Wage:</li> Unlike traditional HR solutions, we specialize in catering to the unique needs of daily-wage employment scenarios.
+            
+              <li>User-Friendly Interface:</li> Our intuitive interface ensures that both employers and workers can navigate the platform with ease, fostering a positive user experience.
+            
+              <li>Real-time Insights:</li> Gain valuable insights into your daily-wage workforce with real-time analytics, empowering you to make informed decisions.
+          </ul>
+        </p>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <img src="{% static 'images\about_reg.jpg' %}" style="height: 600px; width: 550px; border-radius: 5px; box-shadow: 10px 10px 5px rgb(46, 45, 45); margin-left: 50px;" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <section>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31334.180630882805!2d76.2083786!3d10.980531099999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7cc5e3ac54c49%3A0x84ac7c400666ac61!2sAngadipuram%2C%20Kerala!5e0!3m2!1sen!2sin!4v1685350604314!5m2!1sen!2sin" width="600" height="450" style="border:0; border-radius: 5px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+        <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6 col-xl-6">
+          <h1 align="center" style="text-shadow: 2px 2px 4px #262525;">Contact Us</h1>
+          <br>
+            <input type="text" placeholder="Your Name" class="form-control me-2" style="height: 50px; width: 250px; border-radius: 3px;"><input type="text" placeholder="Your Email" class="form-control me-2" style="height: 50px; width: 250px; margin-left: 350px; border-radius: 3px; margin-top: -50px;">
+            <br>
+            <textarea name="" id="" cols="30" rows="10" class="form-control me-2" style="height: 210px; width: 600px; border-radius: 3px;" placeholder="Your Message"></textarea>
+            <br>
+            <a class="btn btn-primary" style="background-color: rgb(59, 145, 224); border: none; height: 50px; width: 200px; font-size: 20px; font-weight: bold; box-shadow: 2px 2px 4px #000000;" href="#" role="button">Send Message</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+{% endblock %}

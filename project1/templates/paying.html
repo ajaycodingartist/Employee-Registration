@@ -1,0 +1,123 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Payment Page
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+<style>
+.main-content {
+    height: 150px;
+    width: 800px;
+    background-color: #2882af;
+    border-bottom-left-radius: 90px;
+    border-bottom-right-radius: 80px;
+    border-top: #2e7fa7;
+}
+.text {
+    text-align: center;
+    font-size: 300%;
+    text-decoration: aliceblue;
+    color: aliceblue;
+}
+.course {
+    color: black;
+    font-size: 25px;
+    font-weight: bolder;
+}
+.centre-content {
+    height: 110px;
+    width: 700px;
+    margin: -70px 30px 20px;
+    color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    border-radius: 25px;
+    padding-top: 0.5px;
+    background-image: linear-gradient(#498ec0, #2b8ebd);
+}
+.centre-content-h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-weight: normal;
+}
+.price {
+    font-size: 60px;
+    margin-left: 5px;
+    bottom: 15px;
+    position: relative;
+}
+.pay-now-btn {
+    cursor: pointer;
+    color: #fff;
+    height: 50px;
+    width: 290px;
+    border: none;
+    margin: 5px 30px;
+    background-color: rgb(61, 144, 177);
+    position: relative;
+}
+.card-details {
+    background: rgb(36, 106, 159);
+    color: rgb(225, 223, 233);
+    margin: 10px 30px;
+    padding: 10px;
+    width: 700px;
+    /* border-bottom-left-radius: 80px; */
+}
+.card-details p {
+    font-size: 15px;
+}
+.card-details label {
+    font-size: 15px;
+    line-height: 35px;
+}
+.submit-now-btn {
+    cursor: pointer;
+    color: #fff;
+    height: 30px;
+    width: 240px;
+    border: none;
+    margin: 5px 30px;
+    background-color: rgb(61, 144, 177);
+}
+.icon-container {
+  margin-bottom: 20px;
+  padding: 7px 0;
+  font-size: 80px;
+}
+</style>
+
+<div style="height: 400px; width: 800px; background-image: linear-gradient(#65bbdb, #3799b7); border-bottom-left-radius: 180px; position: relative; left: 350px;" align="center">
+    <div class="main-content">
+        
+    </div>
+
+    <div class="centre-content">
+        <h1 style="font-size: 80PX; text-shadow: 3px 5px 10px rgb(82, 83, 84);">PAYMENT</h1>
+    </div>
+
+    <div class="last-content">
+        
+
+    </div>
+
+    <div class="card-details">
+        <form action="{% url 'paymentsuccess' %}" method="post">
+            {% csrf_token %}
+            <script src="https://checkout.stripe.com/checkout.js " class="stripe-button"
+            data-key="{{ key }}"
+            data-description="Payment Gateway"
+            data-amount="500"
+            data-locals="auto">
+          </script>
+        </form>
+    </div>
+</div>
+
+
+
+
+{% endblock %}

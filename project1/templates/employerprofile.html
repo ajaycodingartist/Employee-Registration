@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Employer Profile 
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="vh-100" style="background-color: #eee;">
+    <div class="container py-5 h-100">
+      <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-md-12 col-xl-4">
+            <h1 style="color: rgb(10, 10, 10); font-family: Verdana, Geneva, Tahoma, sans-serif;" align="center">Worker's Profile</h1>
+            <br>
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body text-center">
+              <div class="mt-3 mb-4">
+                <img src="../media/{{result.image}}"
+                  class="img-fluid" style="width: 100px;" />
+              </div>
+              <h4 class="mb-2">{{result.username}}</h4>
+              <p class="text-muted mb-4"><h6>Age</h6><p>{{result.age}}</p></p>     
+              <div class="d-flex justify-content-between text-center mt-5 mb-2" style="position: relative; bottom: 30px;">
+                <div>
+                    <p class="mb-2 h6">Gender</p>
+                    <p class="text-muted mb-0">{{result.gender}}</p>
+                </div>&nbsp;&nbsp;
+                <div>
+                  <p class="mb-2 h6">Phone No.</p>
+                  <p class="text-muted mb-0">{{result.phone}}</p>
+                </div>&nbsp;&nbsp;
+                <div>
+                  <p class="mb-2 h6">Location</p>
+                  <p class="text-muted mb-0">{{result.location}}</p>
+                </div>
+                <div class="px-3">
+                    <p class="mb-2 h6">Email</p>
+                    <p class="text-muted mb-0">{{result.email}}</p>
+                </div><br>
+                <div style="position: relative; right: 250px; top: 60px;">
+                    <p class="mb-2 h6">Password</p>
+                    <p class="text-muted mb-0">{{result.password}}</p>
+                </div>
+              </div>
+              <div class="mb-4 pb-2" style="position: relative; top: 30px;">
+                <a href="{% url 'updateuser' id=result.id %}"><img src="{% static 'images\icons8-edit-64.png' %}" alt="" style="height: 50px; width: 50px;"></a> 
+              </div>
+              <div class="mb-4 pb-2" style="position: relative; top: 30px;">
+                <a href="{% url 'userselfdelete' id=result.id %}" onclick="return deletecheck()"><img src="{% static 'images\icons8-trash-30.png' %}" alt="" style="height: 50px; width: 50px;"></a> 
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    function deletecheck()
+    {
+      return confirm("Are you sure to delete the record ?");
+    }
+  </script>
+
+{% endblock %}

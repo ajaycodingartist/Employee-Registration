@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block title %}
+Job Request
+{% endblock %}
+
+{% block content %}
+<script>
+  function popup()
+  {
+    alert("Registered successfully")
+  }
+</script>
+{% load static %} 
+
+<div class="col-lg-12">
+    <form method="post" action="" class="form-horizontal" style="width: 400px; margin-left: 550px; margin-top: 100px;">
+        {% csrf_token %}
+        {% crispy form %}
+      <hr style="margin-top: -1px; color: black; width: 350px; width: 400px; margin-left: 550px;">
+      
+      <button type="submit" class="btn btn-primary"  style="width: 400px; margin-left: 550px;">Submit</button>
+    </form>
+  </div>
+
+{% endblock %}
